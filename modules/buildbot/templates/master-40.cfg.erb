@@ -8,4 +8,29 @@
 from buildbot.process.factory import BuildFactory
 from buildbot.steps.source.git import Git
 from buildbot.steps.shell import ShellCommand
-
+from buildbot.config import BuilderConfig
+cmake_confluence_steps = [
+    #Git(name='Source fetch', mode='full', repourl='git@github.com/kanaderajesh/confluence.git'],
+    #    haltOnFailure=True),
+    ShellCommand(name='Clean', 
+                 description='Cleaning the build directory',
+                 descriptionDone='installed',
+                 command=['rm', '-Rf', 'build/*'],
+                 haltOnFailure=True),
+    ShellCommand(name='Configure', 
+                 description='Cmake configure...',
+                 descriptionDone='tested',
+                 command=['cmake','..'],
+                 haltOnFailure=True),
+    ShellCommand(name='Compile',
+                 description='Compiling Confluence',
+                 descriptionDone='coverage',
+                 command=['make'],
+                 haltOnFailure=True),
+    ShellCommand(name='Test',
+                 description='creating coverage report',
+                 descriptionDone='coverage',
+                 command=['make','test'],
+                 haltOnFailure=True),
+]
+cmake_confluence_factory = BuildFactory(cmake_confluence_steps) 

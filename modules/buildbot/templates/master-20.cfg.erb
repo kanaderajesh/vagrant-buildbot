@@ -13,4 +13,7 @@ c['protocols'] = {'pb': {'port': <%= @slave_port_real %> }}
 # about source code changes.  Here we point to the buildbot clone of pyflakes.
 
 from buildbot.changes.gitpoller import GitPoller
-c['change_source'] = []
+from buildbot.changes.pb import PBChangeSource
+c['change_source'] = [
+  PBChangeSource(),
+]

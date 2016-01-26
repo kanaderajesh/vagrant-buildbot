@@ -7,4 +7,16 @@
 from buildbot.schedulers.basic import SingleBranchScheduler
 from buildbot.schedulers.forcesched import ForceScheduler
 from buildbot.changes import filter
-c['schedulers'] = []
+repos = {
+    'confluence': {
+        'url': 'git@github.com/kanaderajesh/conference.git',
+        'branch': 'master'
+    },
+}
+cmake_confluence_sch = SingleBranchScheduler(
+    name='confluence-sch',
+    branch=repos['confluence']['branch'],
+    builderNames=['cmake_conference'],
+    treeStableTimer=None)
+
+c['schedulers'] = [cmake_confluence_sch]

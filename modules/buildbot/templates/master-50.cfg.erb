@@ -1,4 +1,8 @@
 
 from buildbot.config import BuilderConfig
 
-c['builders'] = []
+c['builders'] = [
+    BuilderConfig(name='cmake_conference', 
+                  slavename='example-slave1', 
+                  factory=cmake_confluence_factory),
+]

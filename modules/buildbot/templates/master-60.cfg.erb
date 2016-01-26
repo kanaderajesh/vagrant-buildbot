@@ -22,7 +22,7 @@ authz_cfg=authz.Authz(
     stopAllBuilds = False,
     cancelPendingBuild = False,
 )
-c['status'].append(html.WebStatus(http_port=8010, authz=authz_cfg))
+c['status'].append(html.WebStatus(http_port=9999, authz=authz_cfg))
 
 ####### PROJECT IDENTITY
 

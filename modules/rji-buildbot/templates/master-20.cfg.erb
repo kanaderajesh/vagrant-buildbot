@@ -1,0 +1,16 @@
+
+# 'protocols' contains information about protocols which master will use for
+# communicating with slaves.
+# You must define at least 'port' option that slaves could connect to your
+# master with this protocol.
+# 'port' must match the value configured into the buildslaves (with their
+# --master option)
+c['protocols'] = {'pb': {'port': <%= @slave_port_real %> }}
+
+####### CHANGESOURCES
+
+# the 'change_source' setting tells the buildmaster how it should find out
+# about source code changes.  Here we point to the buildbot clone of pyflakes.
+
+from buildbot.changes.gitpoller import GitPoller
+c['change_source'] = []

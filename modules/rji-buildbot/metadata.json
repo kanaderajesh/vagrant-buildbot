@@ -1,0 +1,49 @@
+{
+  "name": "rji-buildbot",
+  "version": "1.0.0",
+  "author": "rji",
+  "summary": "Manage a Buildbot CI installation with Puppet.",
+  "license": "Apache-2.0",
+  "source": "https://github.com/rji/puppet-buildbot",
+  "project_page": "https://github.com/rji/puppet-buildbot",
+  "issues_url": "https://github.com/rji/puppet-buildbot/issues",
+  "tags": [
+    "buildbot",
+    "ci",
+    "testing"
+  ],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "RedHat",
+      "operatingsystemrelease": [
+        "6"
+      ]
+    },
+    {
+      "operatingsystem": "CentOS",
+      "operatingsystemrelease": [
+        "6"
+      ]
+    },
+    {
+      "operatingsystem": "Debian",
+      "operatingsystemrelease": [
+        "7"
+      ]
+    }
+  ],
+  "requirements": [
+    {
+      "name": "pe",
+      "version_requirement": ">= 3.2.0"
+    },
+    {
+      "name": "puppet",
+      "version_requirement": "3.x"
+    }
+  ],
+  "dependencies": [
+    {"name":"puppetlabs-concat"},
+    {"name":"puppetlabs-stdlib"}
+  ]
+}

@@ -1,0 +1,10 @@
+
+####### SCHEDULERS
+
+# Configure the Schedulers, which decide how to react to incoming changes.
+# In this case, just kick off a 'runtests' build
+
+from buildbot.schedulers.basic import SingleBranchScheduler
+from buildbot.schedulers.forcesched import ForceScheduler
+from buildbot.changes import filter
+c['schedulers'] = []

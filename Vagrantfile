@@ -11,7 +11,8 @@ Vagrant::Config.run do |config|
 
   # The url from where the 'config.vm.box' box will be fetched if it
   # doesn't already exist on the user's system.
-  config.vm.box_url = "C:\\HashiCorp\\Vagrant\\Boxes\\precise64.box"
+  # config.vm.box_url = "C:\\HashiCorp\\Vagrant\\Boxes\\precise64.box"
+  config.vm.box_url = "http://files.vagrantup.com/precise64.box"
 
   # Boot with a GUI so you can see the screen. (Default is headless)
   # config.vm.boot_mode = :gui
@@ -43,11 +44,19 @@ Vagrant::Config.run do |config|
 
   # Upgrade Chef automatically
   config.vm.provision :shell, :inline => "gem install --no-ri --no-rdoc puppet -v 3.3.2"
-  
+
   # Enable provisioning with chef solo, specifying a cookbooks path, roles
   # path, and data_bags path (all relative to this Vagrantfile), and adding
   # some recipes and/or roles.
 
-  #config.vm.provision :puppet do |puppet|
-  #end
+  config.vm.provision :puppet do |puppet|
+    puppet.module_path = "modules"
+    puppet.manifests_path = "manifests"
+    puppet.manifest_file = "default.pp"
+    puppet.options = "--verbose --debug"
+    puppet.facter = {
+      "fqdn" => "localhost"
+    }
+    #puppet.hiera_config_path = "hiera"
+  end
 end

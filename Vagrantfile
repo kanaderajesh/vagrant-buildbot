@@ -11,8 +11,8 @@ Vagrant::Config.run do |config|
 
   # The url from where the 'config.vm.box' box will be fetched if it
   # doesn't already exist on the user's system.
-  # config.vm.box_url = "C:\\HashiCorp\\Vagrant\\Boxes\\precise64.box"
-  config.vm.box_url = "http://files.vagrantup.com/precise64.box"
+  config.vm.box_url = "C:\\HashiCorp\\Vagrant\\Boxes\\precise64.box"
+  #config.vm.box_url = "http://files.vagrantup.com/precise64.box"
 
   # Boot with a GUI so you can see the screen. (Default is headless)
   # config.vm.boot_mode = :gui
@@ -41,7 +41,7 @@ Vagrant::Config.run do |config|
   # an identifier, the second is the path on the guest to mount the
   # folder, and the third is the path on the host to the actual folder.
   # config.vm.share_folder "v-data", "/vagrant_data", "../data"
-
+  config.vm.provision :shell, :inline => "apt-get update --fix-missing"
   # Upgrade Chef automatically
   config.vm.provision :shell, :inline => "gem install --no-ri --no-rdoc puppet -v 3.3.2"
 

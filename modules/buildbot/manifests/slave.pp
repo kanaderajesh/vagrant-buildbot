@@ -43,9 +43,9 @@ class buildbot::slave(
     default => $max_builds,
   }
 
-  package { $::buildbot::params::prereq_pkgs:
-    ensure => present,
-  }
+  #package { $::buildbot::params::prereq_pkgs:
+  #  ensure => present,
+  #}
 
   package { 'buildbot-slave':
     ensure   => $::buildbot::params::version,

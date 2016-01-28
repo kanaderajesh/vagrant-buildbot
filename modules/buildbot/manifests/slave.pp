@@ -53,20 +53,18 @@ class buildbot::slave(
     require  => Package[$::buildbot::params::prereq_pkgs],
   }
 
-  user { $::buildbot::params::user:
-    ensure     => present,
-    home       => $::buildbot::params::home,
-    gid        => $::buildbot::params::group,
-    managehome => true,
-    membership => 'minimum',
-    shell      => $::buildbot::params::shell,
-    system     => true,
-    comment    => 'Buildbot slave user',
-  }
+  #user { $::buildbot::params::user:
+  #  ensure     => present,
+  #  home       => $::buildbot::params::home,
+  #  gid        => $::buildbot::params::group,
+  #  managehome => true,
+  # system     => true,
+  #  comment    => 'Buildbot slave user',
+  #}
 
-  group { $::buildbot::params::group:
-    ensure => present,
-  }
+  #group { $::buildbot::params::group:
+  #  ensure => present,
+  #}
 
   # File and exec resource defaults for this class
   File {

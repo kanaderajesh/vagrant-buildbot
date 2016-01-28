@@ -48,15 +48,18 @@ Vagrant::Config.run do |config|
   # Enable provisioning with chef solo, specifying a cookbooks path, roles
   # path, and data_bags path (all relative to this Vagrantfile), and adding
   # some recipes and/or roles.
-
-  config.vm.provision :puppet do |puppet|
-    puppet.module_path = "modules"
-    puppet.manifests_path = "manifests"
-    puppet.manifest_file = "default.pp"
-    puppet.options = "--verbose --debug"
-    puppet.facter = {
-      "fqdn" => "localhost"
-    }
+  $puppet_command = "echo sudo puppet apply --modulepath /vagrant/modules /vagrant/manifests/default.pp -v > /vagrant/script.sh"
+  config.vm.provision :shell, :inline => $puppet_command
+  config.vm.provision :shell, :inline => "chmod u+x /vagrant/script.sh", :privileged => true
+    
+  #config.vm.provision :puppet do |puppet|
+  #  puppet.module_path = "modules"
+  #  puppet.manifests_path = "manifests"
+  #  puppet.manifest_file = "default.pp"
+  #  puppet.options = "--verbose"
+  #  puppet.facter = {
+  #    "fqdn" => "localhost"
+  #  }
     #puppet.hiera_config_path = "hiera"
-  end
+  #end
 end

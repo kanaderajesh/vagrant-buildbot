@@ -61,6 +61,7 @@ class buildbot::master(
     ensure  => file,
     mode    => '0644',
     content => template('buildbot/buildbot-master.tac.erb'),
+    require => Exec['buildbot-create-master'],
   }
 
   $master_config = "${::buildbot::params::home}/master/master.cfg"

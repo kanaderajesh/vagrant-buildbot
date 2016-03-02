@@ -6,13 +6,13 @@
 <p>Before you start, you require following softwares on your windows machine:</p>
 <table>
 <tr>
-  <td>Vagrant 1.4.3 <a href="https://releases.hashicorp.com/vagrant/1.4.3/vagrant_1.4.3.msi"> Vagrant 1.4.3 </a></td>
+  <td><a href="https://releases.hashicorp.com/vagrant/1.4.3/vagrant_1.4.3.msi"> Vagrant 1.4.3 </a></td>
 </tr>
 <tr>
-  <td>Oracle Virtual Box <a href="http://download.virtualbox.org/virtualbox/4.3.6/VirtualBox-4.3.6-91406-Win.exe"> Virtual Box 4.3.6 </a> </td>
+  <td> <a href="http://download.virtualbox.org/virtualbox/4.3.6/VirtualBox-4.3.6-91406-Win.exe"> Virtual Box 4.3.6 </a> </td>
   </tr>
 <tr>
-<td>Git Bash Environment <a href="https://github.com/git-for-windows/git/releases/download/v2.7.0.windows.1/Git-2.7.0-64-bit.exe">Git Bash </a></td>
+<td> <a href="https://github.com/git-for-windows/git/releases/download/v2.7.0.windows.1/Git-2.7.0-64-bit.exe">Git Bash </a></td>
 </tr>
 </table>
 

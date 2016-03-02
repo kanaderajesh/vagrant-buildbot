@@ -3,7 +3,7 @@
 
 <p>Prerequiste</p>
 
-<p>Before you start you require following software on your windows machine:</p>
+<p>Before you start, you require following softwares on your windows machine:</p>
 <table>
 <tr>
   <td>Vagrant 1.4.3 ( https://releases.hashicorp.com/vagrant/1.4.3/vagrant_1.4.3.msi )</td>
@@ -16,4 +16,4 @@
 </tr>
 </table>
 
-<p>Install all the packages in sequence, once you install them start the git-bash command CLI console. Copy the vagrant-buildbot code in any directory and then run command "vagrant up" in the created folder.</p>
+<p>Install all the packages, once you install them start the git-bash command CLI console. Copy the vagrant-buildbot code in any directory and then run command "vagrant up" in the created folder.</p>
